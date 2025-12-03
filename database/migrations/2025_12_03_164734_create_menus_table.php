@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
-            $table->string('id_user')->unique();
-            $table->string('amount_macronutrients');
+            $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->double('amount_macronutrients');
             $table->timestamps();   
         });
     }

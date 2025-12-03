@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dishes', function (Blueprint $table) {
+        Schema::create('product_owned', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('menu_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->unsignedInteger('amount_products');
-            $table->timestamps();   
+            $table->timestamps();
         });
     }
 
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('dishes');
+        Schema::dropIfExists('product_owned');
     }
 };
