@@ -24,7 +24,9 @@ return new class extends Migration
             $table->double('fiber')->unsigned()->default(0.0);
             $table->double('proteins')->unsigned()->default(0.0);
             $table->string('unit_measurement');
-            $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('product_category_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->timestamps();
+            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
         });
     }
 
