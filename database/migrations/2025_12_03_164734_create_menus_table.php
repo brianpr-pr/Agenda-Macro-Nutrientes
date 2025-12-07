@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->double('total_macronutrients');
+            $table->double('total_macronutrients_menu')->unsigned();
             $table->timestamps();   
         });
     }

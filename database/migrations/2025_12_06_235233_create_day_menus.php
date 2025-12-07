@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('day_menus', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('calendar_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignId('day_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreignId('menu_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });

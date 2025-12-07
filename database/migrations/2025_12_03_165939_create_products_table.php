@@ -23,7 +23,7 @@ return new class extends Migration
             $table->double('carbohydrates')->unsigned()->default(0.0);
             $table->double('fiber')->unsigned()->default(0.0);
             $table->double('proteins')->unsigned()->default(0.0);
-            $table->string('unit_measurement');
+            $table->string('unit_measurement')->default('grams');
             $table->foreignId('product_category_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
             $table->foreignId('user_id')->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
