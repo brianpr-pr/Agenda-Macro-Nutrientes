@@ -13,6 +13,17 @@ class Day extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var list<string>
+     */
+    protected $fillable = [
+        'user_id',
+        'total_macronutrients_day',
+    ];
+
+
+    /**
      * Get which user this day belongs to.
      */
     public function user(): BelongsTo

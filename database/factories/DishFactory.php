@@ -17,7 +17,9 @@ class DishFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'user_id' => random_int(1,11),
+            'amount_products' => random_int(1,50),
+            'total_macronutrients_dish' => fake()->randomFloat(2,0,1000)
         ];
     }
 }

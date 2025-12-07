@@ -12,6 +12,11 @@ class Menu extends Model
     /** @use HasFactory<\Database\Factories\MenuFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'total_macronutrients_menu',
+    ];
+
     /**
      * Get which user this menu belongs to.
      */

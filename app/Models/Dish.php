@@ -11,6 +11,12 @@ class Dish extends Model
     /** @use HasFactory<\Database\Factories\DishFactory> */
     use HasFactory;
 
+    protected $fillable = [
+        'user_id',
+        'amount_products',
+        'total_macronutrients_dish'
+    ];
+
      /**
      * The products that belongs to the dish.
      */
