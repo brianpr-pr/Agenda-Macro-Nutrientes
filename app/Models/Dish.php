@@ -9,4 +9,8 @@ class Dish extends Model
 {
     /** @use HasFactory<\Database\Factories\DishFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        
+    ];
 }
