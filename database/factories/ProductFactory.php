@@ -29,6 +29,7 @@ class ProductFactory extends Factory
             'proteins' => fake()->randomFloat(2, 0, 1000),
             'unit_measurement' => fake()->randomFloat(2, 0, 1000),
             'product_category_id' => random_int(1,11),
+            'user_id' => null
         ];
     }
 }

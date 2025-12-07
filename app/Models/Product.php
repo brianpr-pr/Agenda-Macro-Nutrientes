@@ -55,5 +55,6 @@ class Product extends Model
         'proteins',
         'unit_measurement',
         'product_category_id',
+        'user_id'
     ];
 }

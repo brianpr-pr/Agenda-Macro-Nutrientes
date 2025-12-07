@@ -17,7 +17,7 @@ class DayFactory extends Factory
     public function definition(): array
     {
         return [
-            'user_id' => random_int(1,11),
+            'user_id' => random_int(1,1),
             'total_macronutrients_day' => fake()->randomFloat(2, 0, 1000),
         ];
     }
