@@ -6,17 +6,22 @@
     <?php
         $year = date('Y');
         $monthOutput = date('M');
-        $montNumber = date('m');
-        $days = date('t');
-        $left = 0;
-        $right = 0;
-        $count = 0;
+        $monthNumber = date('m');
+        $days = cal_days_in_month(CAL_GREGORIAN, $monthNumber, $year);
+
         if(isset($_GET['month']) ){
-            $count = $_GET['month'];
-           echo $count;
-            
+            $monthNumber = $_GET['month'];
+            if( intval($monthNumber) === 13){
+                echo 'New Year';
+                $year += 1;
+                $monthNumber = 1;
+            }else if( intval($monthNumber) === 0){
+                $year -= 1;
+                $monthNumber = 12;
+            }
+            $days = cal_days_in_month(CAL_GREGORIAN, $monthNumber, $year);
+            $monthOutput = date('F', mktime(0, 0, 0, $monthNumber, 1, $year));  
         }
-        
     ?>
     
     <div>
@@ -25,7 +30,7 @@
     </div>
 
     <div class="grid grid-cols-3 items-center justify-items-center">
-        <a href="<?php echo '/days?month=' . ($count - 1); ?>" class=""> 
+        <a href="<?php echo '/days?year=' . ($year) . '&month=' . ($monthNumber - 1); ?>" class=""> 
             <div class="">
                 <span class="text-5xl font-bold"><</span>  
             </div>
@@ -39,7 +44,7 @@
             ?>
         </div>
 
-       <a href="<?php echo '/days?month=' . ($count + 1); ?>" class=""> 
+       <a href="<?php echo '/days?year=' . ($year) . '&month=' . ($monthNumber + 1); ?>" class=""> 
             <div class="">
                 <span class="text-5xl font-bold">></span>  
             </div>
