@@ -16,7 +16,10 @@
             <p> Proteins: {{ $product->proteins }} </p>
             <p> Unit Measurement: {{ $product->unit_measurement }} </p>
             <p> Product Category: {{ $product->product_category_id }} </p>
-            <p> User Id: {{ $product->user_id }} </p>
+            @if($product->user_id != 0)
+                <p> User Id: {{ $product->user_id }} </p>
+                <button class="border-2 rounded-md bg-red-500 p-2 m-3">Delete</button>
+            @endif
         </div>
      @endforeach
 </div>
