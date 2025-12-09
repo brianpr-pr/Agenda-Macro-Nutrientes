@@ -67,4 +67,10 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 
-##List of thing to improve
+## List of thing to improve
+
+Fix bug in the calendar view.
+
+Use API to show default products in the database.
+
+When a user attempts to create a product and there is incorrect data in the input, the data that was correct should be maintained inside of the input element.
