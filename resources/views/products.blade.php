@@ -10,66 +10,130 @@
             <div class="mb-2">
                 <label for="calories">Calories:</label>
                 <input type="text" name="calories" id="calories" class="rounded-md w-16">
+                @if($errors->has('calories'))
+                    <div>
+                        <p class="text-red-500">{{ $errors->first('calories') }}</p>
+                    </div>
+                @endif
             </div>
 
             <div class="mb-2">
                 <label for="total_fat">Total Fat:</label>
                 <input type="text" name="total_fat" id="total_fat" class="rounded-md w-16">
+                @if($errors->has('total_fat'))
+                    <div>
+                       <p class="text-red-500"> {{ $errors->first('total_fat') }}</p>
+                    </div>
+                @endif
             </div>
 
             <div class="mb-2">
                 <label for="satured_fat">Satured Fat:</label>
                 <input type="text" name="satured_fat" id="satured_fat" class="rounded-md w-16">
+                @if($errors->has('satured_fat'))
+                    <div>
+                        <p class="text-red-500">{{ $errors->first('satured_fat') }}</p>
+                    </div>
+                @endif
             </div>
 
             <div class="mb-2">
                 <label for="trans_fat">Trans Fat:</label>
                 <input type="text" name="trans_fat" id="trans_fat" class="rounded-md w-16">
+                @if($errors->has('trans_fat'))
+                    <div>
+                        <p class="text-red-500">{{ $errors->first('trans_fat') }}</p>
+                    </div>
+                @endif
             </div>
 
             <div class="mb-2">
                 <label for="cholesterol_fat">Cholestero Fat:</label>
                 <input type="text" name="cholesterol_fat" id="cholesterol_fat" class="rounded-md w-16">
+                @if($errors->has('cholesterol_fat'))
+                    <div>
+                        <p class="text-red-500">{{ $errors->first('cholesterol_fat') }}</p>
+                    </div>
+                @endif
             </div>
 
             <div class="mb-2">
                 <label for="polyunsaturated_fat">Polyunsaturated Fat:</label>
                 <input type="text" name="polyunsaturated_fat" id="polyunsaturated_fat" class="rounded-md w-16">
+                @if($errors->has('polyunsaturated_fat'))
+                    <div>
+                        <p class="text-red-500">{{ $errors->first('polyunsaturated_fat') }}</p>
+                    </div>
+                @endif
             </div>
 
             <div class="mb-2">
                 <label for="carbohydrates">Carbohydrates:</label>
                 <input type="text" name="carbohydrates" id="carbohydrates" class="rounded-md w-16">
+                @if($errors->has('carbohydrates'))
+                    <div>
+                        <p class="text-red-500">{{ $errors->first('carbohydrates') }}</p>
+                    </div>
+                @endif
             </div>
 
             <div class="mb-2">
                 <label for="monounsaturated_fat">Monounsaturated Fat:</label>
                 <input type="text" name="monounsaturated_fat" id="monounsaturated_fat" class="rounded-md w-16">
+                @if($errors->has('monounsaturated_fat'))
+                    <div>
+                        <p class="text-red-500">{{ $errors->first('monounsaturated_fat') }}</p>
+                    </div>
+                @endif
             </div>
             
             <div class="mb-2">
                 <label for="fiber">Fiber:</label>
                 <input type="text" name="fiber" id="fiber" class="rounded-md w-16">
+                @if($errors->has('fiber'))
+                    <div>
+                        <p class="text-red-500">{{ $errors->first('fiber') }}</p>
+                    </div>
+                @endif
             </div>
 
             <div class="mb-2">
                 <label for="proteins">Proteins:</label>
                 <input type="text" name="proteins" id="proteins" class="rounded-lg w-16">
+                @if($errors->has('proteins'))
+                    <div>
+                        <p class="text-red-500">{{ $errors->first('proteins') }}</p>
+                @endif
             </div>
 
             <div class="mb-2">
                 <label for="unit_measurement">Unit Measurement:</label>
                 <div></div>
-                <select type="text" name="unit_measurement" id="unit_measurement" class="rounded-md w-md">
-                   @foreach()
-                    <option value="">Category Test</option>
-                   @endforeach
+                <select type="text" name="unit_measurement" id="unit_measurement" class="rounded-md w-lg">
+                    <option value="grams">Grams</option>
+                    <option value="kilograms">Kilograms</option>
+                    <option value="miligrams">Miligrams</option>
+                    <option value="units">Units</option>
                 </select>
+                @if($errors->has('unit_measurement'))
+                    <div>
+                        <p class="text-red-500">{{ $errors->first('unit_measurement') }}</p>
+                    </div>
+                @endif
             </div>
 
             <div class="mb-2">
-                <label for="product_category">Product Category:</label>
-                <input type="text" name="product_category" id="product_category" class="rounded-md w-16">
+                <label for="product_category_id">Product Category:</label>
+                <select type="text" name="product_category_id" id="product_category_id" class="rounded-md w-lg">
+                   @foreach($product_category as $category)
+                    <option value="{{$category->id}}">{{$category->category}}</option>
+                   @endforeach
+                </select>
+                @if($errors->has('product_category_id'))
+                    <div>
+                        <p class="text-red-500">{{ $errors->first('product_category_id') }}</p>
+                    </div>
+                @endif
             </div>
             
             <button type="submit" class="text-white rounded-md border-2 bg-blue-500 w-32 m-auto">Create Product</button>
