@@ -7,19 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-class Product extends Model
+class ProductDefault extends Model
 {
-    /** @use HasFactory<\Database\Factories\ProductFactory> */
-    use HasFactory;
-
-    /**
-     * Get which user this product belongs to.
-     */
-    public function user(): BelongsTo
-    {
-       return $this->belongsTo(User::class);
-    }
-
     /**
      * The dishes that belongs to the product.
      */
@@ -43,6 +32,7 @@ class Product extends Model
      * @var list<string>
      */
     protected $fillable = [
+        'id',
         'name',
         'calories',
         'total_fat',
@@ -56,7 +46,6 @@ class Product extends Model
         'proteins',
         'unit_measurement',
         'product_category_id',
-        'user_id'
     ];
 
     /**
@@ -66,4 +55,5 @@ class Product extends Model
     {
         return Product::all();
     }
+
 }

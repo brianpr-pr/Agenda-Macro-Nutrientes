@@ -17,7 +17,15 @@ class Dish extends Model
         'total_macronutrients_dish'
     ];
 
-     /**
+    /**
+     * The products that belongs to the dish.
+     */
+    public function products(): BelongsToMany
+    {
+        return $this->belongsToMany(Product::class)->withPivot('units')->withTimestamps();
+    }
+
+    /**
      * The products that belongs to the dish.
      */
     public function products(): BelongsToMany

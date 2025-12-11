@@ -75,3 +75,5 @@ Use API to show default products in the database.
 
 When a user attempts to create a product and there is incorrect data in the input, the data that was correct should be maintained inside of the input element.
 Fix routing, I need to add redirection to avoid users that haven't logged from entering pages and encounting errors.
+
+Working on update on the migration, keep working on the migrate fiile for ProductDefault, do model, factorie nad seeder, in the ProductController i have an example of how to retrive first product from a product category and how to save data into an associative array, complete the migratino and create seeder to insert one row per category for the defaults products.
