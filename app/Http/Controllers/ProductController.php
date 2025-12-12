@@ -42,7 +42,7 @@ class ProductController extends Controller
             ->orWhereNull('user_id')
             ->get(),
             'product_category' => ProductCategory::all(),
-            'message' => '$client'
+            'message' => $result
         ]);
     }
 }

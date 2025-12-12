@@ -16,19 +16,9 @@ return new class extends Migration
             //Should this be unique?
             $table->string('name')->default('');
             $table->double('calories')->unsigned()->default(0.0);
-            $table->double('total_fat')->unsigned()->default(0.0);
-            $table->double('saturated_fat')->unsigned()->default(0.0);
-            $table->double('trans_fat')->unsigned()->default(0.0);
-            $table->double('cholesterol_fat')->unsigned()->default(0.0);
-            $table->double('polyunsaturated_fat')->unsigned()->default(0.0);
-            $table->double('monounsaturated_fat')->unsigned()->default(0.0);
-            $table->double('carbohydrates')->unsigned()->default(0.0);
-            $table->double('fiber')->unsigned()->default(0.0);
-            $table->double('proteins')->unsigned()->default(0.0);
-            $table->string('unit_measurement')->default('grams');
-            $table->foreignId('product_category_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreignId('product_creation_id')->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
+            $table->foreignId('product_default_id')->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
             $table->timestamps();
-            $table->foreignId('user_id')->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
         });
     }
 
