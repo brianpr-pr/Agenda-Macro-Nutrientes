@@ -16,8 +16,8 @@ return new class extends Migration
             //Should this be unique?
             $table->string('name')->default('');
             $table->double('calories')->unsigned()->default(0.0);
-            $table->foreignId('product_creation_id')->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
-            $table->foreignId('product_default_id')->nullable()->constrained()->cascadeOnUpdate()->nullOnDelete();
+            $table->unsignedBigInteger('product_creation_id')->references('id')->on('product_creations');
+            $table->unsignedBigInteger('product_default_id')->references('id')->on('product_defaults');
             $table->timestamps();
         });
     }
