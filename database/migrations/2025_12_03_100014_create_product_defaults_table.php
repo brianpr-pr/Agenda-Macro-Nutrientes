@@ -12,8 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('product_defaults', function (Blueprint $table) {
-            $table->bigInteger('id')->primary();
-            //Should this be unique?
+            $table->unsignedBigInteger('id')->primary();
             $table->string('name')->default('');
             $table->double('calories')->unsigned()->default(0.0);
             $table->double('total_fat')->unsigned()->default(0.0);
@@ -26,6 +25,7 @@ return new class extends Migration
             $table->double('fiber')->unsigned()->default(0.0);
             $table->double('proteins')->unsigned()->default(0.0);
             $table->string('unit_measurement')->default('grams');
+            $table->boolean('filled')->default(false);
             $table->foreignId('product_category_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });

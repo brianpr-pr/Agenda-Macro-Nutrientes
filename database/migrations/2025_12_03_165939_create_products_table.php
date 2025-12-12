@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            //Should this be unique?
             $table->string('name')->default('');
-            $table->double('calories')->unsigned()->default(0.0);
             $table->unsignedBigInteger('product_creation_id')->nullable();
-            $table->foreing('product_creation_id')->references('id')->on('product_creations');
-            $table->unsignedBigInteger('product_default_id')->references('id')->on('product_defaults')->nullable();
-            $table->foreing('product_default_id')->references('id')->on('product_defaults');
+            $table->foreign('product_creation_id')->references('id')->on('product_creations');
+
+            $table->unsignedBigInteger('product_default_id')->nullable();
+            $table->foreign('product_default_id')->references('id')->on('product_defaults');
+            
             $table->timestamps();
         });
     }
