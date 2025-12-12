@@ -14,11 +14,11 @@ class ProductSeeder extends Seeder
      */
     public function run(): void
     {
-        //Product::factory()->count(10)->create();
-        $client = new BedcaClient();
-        //[]
-        foreach($client->getFoodGroups()->food as $foodGroup){
-            array_push($categories, $foodGroup->fg_eng_name );
-        }
+        // //Product::factory()->count(10)->create();
+        // $client = new BedcaClient();
+        // //[]
+        // foreach($client->getFoodGroups()->food as $foodGroup){
+        //     array_push($categories, $foodGroup->fg_eng_name );
+        // }
     }
 }

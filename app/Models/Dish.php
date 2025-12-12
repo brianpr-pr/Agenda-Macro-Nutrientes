@@ -20,7 +20,7 @@ class Dish extends Model
     /**
      * The products that belongs to the dish.
      */
-    public function products(): BelongsToMany
+    public function product_defaults(): BelongsToMany
     {
         return $this->belongsToMany(Product::class)->withPivot('units')->withTimestamps();
     }
