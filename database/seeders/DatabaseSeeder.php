@@ -20,14 +20,8 @@ class DatabaseSeeder extends Seeder
             ProductCreationSeeder::class,
             ProductSeeder::class,
             DishSeeder::class,
-            
-            //MenuSeeder::class,
-            //DaySeeder::class,
-            //ProductSeeder::class,
+            MenuSeeder::class,
+            DaySeeder::class,
         ]);
     }
 }
-/**
- * Im not able to use the seeder from DishSeeder it cant add or update a child row
- * i will go to eat, once im back watch video, read docs to try to understand what the hell am actually doing.
- */
